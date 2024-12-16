@@ -1,0 +1,17 @@
+<div class="container text-center mt-2 mb-4 background-content">
+    <div class="row">
+        <div class="col-sm-4 mt-2">
+            <img [src]="imageBaseUrl + movie.poster_path" class="card-img-top" alt="{{ movie.title }}">
+        </div>
+        <div class="col-sm-8 mt-4">
+            <h5 class="card-title mb-4 text-white">{{ movie.title }} ({{ movie.release_date.split('-')[0] }})</h5>
+            <p class="card-text text-white"><strong>Sinopsis: </strong>{{ movie.overview }}</p>
+        </div>
+    </div>
+    <div class="row mt-2 mb-2">
+        <div class="col-sm text-white"><p><strong>Duración:</strong> {{ movie.runtime }} minutos</p></div>
+        <div class="col-sm text-white"><p><strong>Fecha de lanzamiento:</strong> {{ movie.release_date }}</p></div>
+        <div class="col-sm text-white"><p><strong>Calificación:</strong> {{ movie.vote_average }}</p></div>
+    </div>
+    <button [routerLink]="['/']" class="btn button mb-2">Regresar a la búsqueda</button>
+</div>

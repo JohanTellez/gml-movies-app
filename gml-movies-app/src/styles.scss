@@ -1,0 +1,26 @@
+body {
+    background: #800101;
+    background: radial-gradient(circle, #800101 0%, #000000 100%);
+}
+
+.text-red {
+    color: #ca0505;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.button {
+    color: #fff;
+    background: linear-gradient(90deg, #000000 0%, #800101 67%);
+    font-weight: bold;
+    border: 2px solid #fff;
+}
+
+.button:hover {
+    color: #fff;
+    background: linear-gradient(90deg, #800101 0%, #000000 67%);
+    font-weight: bold;
+    border: 2px solid #fff;
+}

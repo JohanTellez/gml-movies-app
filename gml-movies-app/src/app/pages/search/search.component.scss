@@ -1,0 +1,83 @@
+// Estilos de cards
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #807d7d57;
+}
+
+.card-body {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.card-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+// Estios del paginador
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-item {
+    margin: 0 5px;
+}
+
+.page-item.active .page-link {
+    background-color: #800101;
+    border-color: #800101;
+    color: white;
+    outline: none;
+}
+
+.page-item .page-link {
+    background-color: black;
+    border: 1px solid #800101;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    outline: none;
+}
+
+.page-item.disabled .page-link {
+    background-color: #d3d3d3;
+    border-color: #d3d3d3;
+    color: #aaa;
+    pointer-events: none;
+}
+
+.page-link:hover {
+    background-color: #800101;
+    color: white;
+    border-color: #800101;
+    outline: none;
+}
+
+// Estilos para el input
+#searchInput {
+    background-color: black;
+    border: 1px solid #800101;
+    color: white;
+    padding: 10px;
+    border-radius: 5px; 
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#searchInput::placeholder {
+    color: white;
+    font-weight: normal;
+}
+
+#searchInput:focus {
+    border-color: #800101;
+    outline: none;
+    box-shadow: 0 0 5px #800101;
+}

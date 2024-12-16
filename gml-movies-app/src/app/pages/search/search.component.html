@@ -1,0 +1,40 @@
+<div class="container mt-4">
+    <h2 class="text-red">Buscar Películas</h2>
+    <div class="form-group">
+        <input [(ngModel)]="query" class="form-control" placeholder="Buscar película" (input)="onSearch()" id="searchInput">
+    </div>
+
+    <div *ngIf="movies.length > 0" class="mt-4">
+        <div class="row">
+            <div class="col-12 col-sm-7 col-md-5 col-lg-4 mb-2 " *ngFor="let movie of movies">
+                <div class="card" style="width: 100%">
+                    <img [src]="imageBaseUrl + movie.poster_path" class="card-img-top" alt="{{ movie.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title text-white">{{ movie.title }} ({{ movie.release_date.split('-')[0] }})</h5>
+                        <p class="card-text text-white">{{ movie.overview }}</p>
+                        <a [routerLink]="['/details', movie.id]" class="btn button">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paginación -->
+        <nav class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item text-red" [class.disabled]="currentPage === 1">
+                    <a class="page-link" (click)="onPageChange(currentPage - 1)" href="#">Anterior</a>
+                </li>
+                <li *ngFor="let page of pagesToShow" class="page-item" [class.active]="page === currentPage">
+                    <a class="page-link" (click)="onPageChange(page)" href="#">{{ page }}</a>
+                </li>
+                <li class="page-item" [class.disabled]="currentPage === totalPages">
+                    <a class="page-link text-red" (click)="onPageChange(currentPage + 1)" href="#">Siguiente</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div *ngIf="movies.length === 0 && query" class="alert alert-info mt-4">
+        No se encontraron resultados para "{{ query }}".
+    </div>
+</div>
